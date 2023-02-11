@@ -8,8 +8,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.DispatcherServlet;
 
+import tobyspring.config.MySpringBootApplication;
 
-@MySpringBootAnnotation
+
+@MySpringBootApplication
 public class HellobootApplication {
 	
 	public static void main(String[] args) {
