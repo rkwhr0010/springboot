@@ -8,17 +8,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.DispatcherServlet;
 
-@Configuration
-@ComponentScan //현재 클래스 경로 기준으로 하위 경로 탐색
+
+@MySpringBootAnnotation
 public class HellobootApplication {
-	@Bean
-	public ServletWebServerFactory servletWebServerFactory() {
-		return new TomcatServletWebServerFactory();
-	}
-	@Bean
-	public DispatcherServlet dispatcherServlet() {
-		return new DispatcherServlet();
-	}
 	
 	public static void main(String[] args) {
 		SpringApplication.run(HellobootApplication.class,args);
