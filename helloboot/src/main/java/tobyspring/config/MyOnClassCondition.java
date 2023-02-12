@@ -8,7 +8,7 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
 import org.springframework.util.ClassUtils;
 
 public class MyOnClassCondition implements Condition {
-
+	//중복방지를 위해 메타어노테이션화
 	@Override
 	public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
 		Map<String,Object> attrs = 
