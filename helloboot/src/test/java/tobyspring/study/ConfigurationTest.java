@@ -21,7 +21,7 @@ public class ConfigurationTest {
 		ac.close();
 	}
 	
-	@Configuration(proxyBeanMethods = false)
+	@Configuration //(proxyBeanMethods = false)
 	static class MyConfig{
 		@Bean
 		Common common() {
