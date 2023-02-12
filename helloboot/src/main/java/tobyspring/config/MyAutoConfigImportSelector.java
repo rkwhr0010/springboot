@@ -1,6 +1,5 @@
 package tobyspring.config;
 
-import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 import org.springframework.boot.context.annotation.ImportCandidates;
