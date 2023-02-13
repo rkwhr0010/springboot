@@ -4,7 +4,6 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
-import org.springframework.core.env.Environment;
 
 import tobyspring.config.ConditaionalMyOnClass;
 import tobyspring.config.MyAutoConfiguration;
@@ -22,13 +21,7 @@ public class TomcatWebServerConfig {
 		 return factory;
 	}
 	
-	@Bean
-	public ServerProperties properties(Environment env) {
-		ServerProperties properties = new ServerProperties();
-		properties.setContextPath(env.getProperty("contextPath"));
-		properties.setPort(Integer.valueOf(env.getProperty("port")));
-		return properties;
-	}
+
 	
 	
 }
