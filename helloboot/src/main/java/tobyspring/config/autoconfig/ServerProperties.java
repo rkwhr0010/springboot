@@ -1,13 +1,13 @@
 package tobyspring.config.autoconfig;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
+@MyConfigurationProperties
 public class ServerProperties {
 	
-	@Value("${contextPath:}")
 	private String contextPath;
 	
-	@Value("${port:8080}")
 	private int port;
 
 	public String getContextPath() {
