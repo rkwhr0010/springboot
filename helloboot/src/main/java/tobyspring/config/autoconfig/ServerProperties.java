@@ -1,9 +1,6 @@
 package tobyspring.config.autoconfig;
 
-import org.springframework.stereotype.Component;
-
-@Component
-@MyConfigurationProperties
+@MyConfigurationProperties(prefix ="server")
 public class ServerProperties {
 	
 	private String contextPath;

@@ -1,5 +1,7 @@
 package tobyspring.config.autoconfig;
 
+import java.util.Map;
+
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.boot.context.properties.bind.Binder;
@@ -20,7 +22,10 @@ public class PropertyPostProcessorConfig {
 				MyConfigurationProperties annotation = AnnotationUtils.findAnnotation(bean.getClass(), MyConfigurationProperties.class);
 				if(annotation == null) return bean;
 				
-				return Binder.get(env).bindOrCreate("", bean.getClass());
+				Map<String, Object> attrs = AnnotationUtils.getAnnotationAttributes(annotation);
+				String prefix = (String) attrs.get("prefix");
+				
+				return Binder.get(env).bindOrCreate(prefix, bean.getClass());
 			}
 			
 		};
